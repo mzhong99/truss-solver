@@ -119,7 +119,7 @@ For an example of a force with type (4), look at the force `AB` in both `point_A
 
 #### the statics.py file
 
-So you've set up your json file to contain all the forces in your system. Congratulations, the hard part is over. Simply runn from the command prompt:
+So you've set up your json file to contain all the forces in your system. Congratulations, the hard part is over. Simply run from the command prompt:
 
 ```
 python statics.py
