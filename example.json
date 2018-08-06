@@ -1,0 +1,167 @@
+{
+  "point_A":
+  {
+    "coords": [0, 0],
+    "forces": {
+      "A_x": {
+        "is_known" : false,
+        "is_internal": false,
+        "unit_vector": [1, 0],
+        "magnitude": 0
+      },
+      "A_y": {
+        "is_known" : false,
+        "is_internal": false,
+        "unit_vector": [0, 1],
+        "magnitude": 0
+      },
+      "AB": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [1, 0],
+        "magnitude": 0
+      },
+      "AE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [0.5, -0.866025],
+        "magnitude": 0
+      }
+    }
+  },
+  "point_B":
+  {
+    "coords": [10, 0],
+    "forces": {
+      "AB": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-1, 0],
+        "magnitude": 0
+      },
+      "BE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-0.5, -0.866025],
+        "magnitude": 0
+      },
+      "BD": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [0.5, -0.866025],
+        "magnitude": 0
+      },
+      "BC": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [1, 0],
+        "magnitude": 0
+      },
+      "weight_B": {
+        "is_known": true,
+        "is_internal": false,
+        "unit_vector": [0, -1],
+        "magnitude": 6
+      }
+    }
+  },
+  "point_C":
+  {
+    "coords": [20, 0],
+    "forces": {
+      "BC": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-1, 0],
+        "magnitude": 0
+      },
+      "CE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [0, -1],
+        "magnitude": 0
+      },
+      "CD": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-0.5, -0.866025],
+        "magnitude": 0
+      },
+      "C": {
+        "is_known" : false,
+        "is_internal": false,
+        "unit_vector": [-0.866025, 0.5],
+        "magnitude": 0
+      }
+    }
+  },
+  "point_D":
+  {
+    "coords": [15, -8.66025],
+    "forces": 
+    {
+      "CD": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [0.5, 0.866025],
+        "magnitude": 0
+      },
+      "BD": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-0.5, 0.866025],
+        "magnitude": 0
+      },
+      "weight_D": {
+        "is_known" : true,
+        "is_internal": false,
+        "unit_vector": [0, -1],
+        "magnitude": 30
+      },
+      "DE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-1, 0],
+        "magnitude": 0
+      }
+    }
+  },
+  "point_E":
+  {
+    "coords": [5, -8.66025],
+    "forces": 
+    {
+      "DE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [1, 0],
+        "magnitude": 0
+      },
+      "BE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [0.5, 0.866025],
+        "magnitude": 0
+      },
+      "EF": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-0.948683, -0.316228],
+        "magnitude": 0
+      },
+      "AE": {
+        "is_known" : false,
+        "is_internal": true,
+        "unit_vector": [-0.5, 0.866025],
+        "magnitude": 0
+      },
+      "weight_E":
+      {
+        "is_known" : true,
+        "is_internal": false,
+        "unit_vector": [0, -1],
+        "magnitude": 18
+      }
+    }
+  }
+}
