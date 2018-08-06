@@ -89,7 +89,7 @@ The json file is where you're going to put data for each joint in your truss. He
 }
 ```
 
-This is a lot of information to walk through, so let's take this step by step. First, look at the joint for `point_A`. Each joint has two properties:
+**This is a lot of information to walk through**, so let's take this step by step. First, look at the joint for `point_A`. Each joint has two properties:
 
 1. The corrdinate position of the joint
 2. A set of forces and their information on the joint.
