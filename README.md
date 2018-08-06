@@ -5,6 +5,8 @@ A calculator which determines all unknown forces of a statically determinate tru
 
 Before you begin, I will assume you have at least a basic understanding of the Method of Joints in determining the internal forces of a rigid, statically determinate body. If you don't know this method, it's essentially drawing a free-body diagram for each joint in the truss and iteratively solving a large system of equations. For more information, consult https://en.wikibooks.org/wiki/Statics/Method_of_Joints .
 
+This truss solver currently uses **Python 3.6.4** or higher.
+
 # usage
 
 This program works under several crucial restraints:
