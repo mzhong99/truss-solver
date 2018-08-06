@@ -116,3 +116,85 @@ For an example of a force with type (2), look at the force `A_x` in `point_A`. T
 Internally known forces are usually not initially given, but on the off-chance they are, they allow the program to analytically solve some more troublesome joints if the additional value is needed.
 
 For an example of a force with type (4), look at the force `AB` in both `point_A` and `point_B`. Internal forces are a force reaction **pair**, so they need to have opposite direction unit vectors in the different joints. Essentially, we're saying that there exists a member connecting `point_A` to `point_B`, named `AB`, which contains a reactive internal force. Notice that the unit vector for `AB` in `point_A` is `[1, 0]` whereas in `point_B`, the unit vector is flipped in the opposite direction, `[-1, 0]`. Make sure the forces have exactly the same name, i.e., don't use `BA` and stick to ordering letters by lexicographical (alphabetical) order, because otherwise the program will recognize this force as *two different forces* which are **not** a reactive pair.
+
+#### the statics.py file
+
+So you've set up your json file to contain all the forces in your system. Congratulations, the hard part is over. Simply runn from the command prompt:
+
+```
+python statics.py
+```
+
+(Make sure you have Python 3 for this!)
+
+The following will appear in your command prompt:
+
+```
+Enter file name for system analysis:
+```
+
+Enter the filename of the json file. This is what I did:
+
+```
+Enter file name for system analysis: example.json
+```
+
+From here, the program will do the rest. Here are the logs of mine:
+
+```
+Internal forces:
+['AB', 'AE', 'BE', 'BD', 'BC', 'CE', 'CD', 'DE', 'EF']
+External forces:
+['A_x', 'A_y', 'C']
+Processed solution for external forces:
+A_x: 51.96150000000001
+A_y: 24.0
+C: 60.0
+Solving: F_y | AE * -0.866025 = -24.0 | Internal force AE: 27.712825842210098
+Solving: F_x | AB * 0 = -65.81791292110506 | Internal force AB: -65.81791292110506
+{'point_A': {'coords': [0, 0],
+             'forces': {'AB': {'is_internal': True,
+                               'is_known': True,
+                               'magnitude': -65.81791292110506,
+                               'unit_vector': [1, 0]},
+                        'AE': {'is_internal': True,
+                               'is_known': True,
+                               'magnitude': 27.712825842210098,
+                               'unit_vector': [0.5, -0.866025]},
+                        'A_x': {'is_internal': False,
+                                'is_known': True,
+                                'magnitude': 51.96150000000001,
+                                'unit_vector': [1, 0]},
+                        'A_y': {'is_internal': False,
+                                'is_known': True,
+                                'magnitude': 24.0,
+                                'unit_vector': [0, 1]}}},
+
+...[some information has been omitted for brevity]...
+
+ 'point_E': {'coords': [5, -8.66025],
+             'forces': {'AE': {'is_internal': True,
+                               'is_known': True,
+                               'magnitude': 27.712825842210098,
+                               'unit_vector': [-0.5, 0.866025]},
+                        'BE': {'is_internal': True,
+                               'is_known': False,
+                               'magnitude': 0,
+                               'unit_vector': [0.5, 0.866025]},
+                        'DE': {'is_internal': True,
+                               'is_known': False,
+                               'magnitude': 0,
+                               'unit_vector': [1, 0]},
+                        'EF': {'is_internal': True,
+                               'is_known': False,
+                               'magnitude': 0,
+                               'unit_vector': [-0.948683, -0.316228]},
+                        'weight_E': {'is_internal': False,
+                                     'is_known': True,
+                                     'magnitude': 18,
+                                     'unit_vector': [0, -1]}}}}
+```
+
+The program will then detect which forces are internal and which are external, and use its algorithm to solve this problem. It returns a dictionary which is formatted much in the same way the json file you gave in whas formatted, but this time, all unknown forces are given values. Check for yourself - apparently, force `AB` has a magnitude of `-65.81791292110506`.
+
+Experiment with different truss structures and see what works and what doesn't!
